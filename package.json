@@ -9,6 +9,7 @@
   "scripts": {
     "build": "eas build --profile development --platform android --local",
     "start": "expo start",
+    "test": "jest",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web"
@@ -35,5 +36,8 @@
     "jest-expo": "~53.0.9",
     "typescript": "~5.8.3"
   },
-  "private": true
+  "private": true,
+  "jest": {
+    "preset": "jest-expo"
+  }
 }
