@@ -18,3 +18,4 @@ function App() {
     </Authenticator.Provider>
   );
 }
+export default App;
