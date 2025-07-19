@@ -1,6 +1,27 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
-  }
+    "strict": true,
+    "module": "esnext",
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "__tests-fast__/**/*",
+    "__tests-slow__/**/*",
+    "__testSupport__/**/*",
+    "@types",
+    "amplifyConfig.ts",
+    "app.config.ts",
+    "app",
+    "utils/colors.ts",
+    "components",
+    "eslint-meta.config.ts",
+    "features",
+    "global.d.ts",
+    "jest.config.ts",
+    "jestSetupFile.ts",
+    "scorebridge-ts-submodule",
+    "utils",
+    "App.tsx"
+  ]
 }
