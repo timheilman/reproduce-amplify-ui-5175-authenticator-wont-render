@@ -1,23 +1,20 @@
 import { Amplify } from "aws-amplify";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { Button } from "react-native";
 import { libraryOptions, resourcesConfig } from "./amplifyConfig";
+import { Authenticator, useAuthenticator } from "@aws-amplify/ui-react-native";
 Amplify.configure(resourcesConfig, libraryOptions);
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+function SignOutButton() {
+  const { signOut } = useAuthenticator();
+  return <Button title="Sign Out" onPress={signOut} />;
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+function App() {
+  return (
+    <Authenticator.Provider>
+      <Authenticator>
+        <SignOutButton />
+      </Authenticator>
+    </Authenticator.Provider>
+  );
+}
